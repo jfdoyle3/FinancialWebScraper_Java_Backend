@@ -1,4 +1,4 @@
-package com.jfdeveloper.webscraperbackend.console;
+package com.webscraper.console;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

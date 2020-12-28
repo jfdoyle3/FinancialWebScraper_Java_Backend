@@ -1,4 +1,4 @@
-package com.jfdeveloper.webscraperbackend.console;
+package com.webscraper.console;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

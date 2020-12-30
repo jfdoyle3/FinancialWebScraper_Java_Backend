@@ -1,14 +1,38 @@
-package com.webscraper.console;
+package com.jfdeveloper.webscraperbackend.entity.objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "stocktable")
 public class Stock {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private int id;
+
+	@Column(name = "date")
+	private String dateTime;
+	@Column(name = "symbol")
 	private String symbol;
+	@Column(name = "symbol")
 	private String lastPrice;
+	@Column(name = "symbol")
 	private String priceChange;
+	@Column(name = "symbol")
 	private String changePercentage;
+	@Column(name = "symbol")
 	private String marketTime;
+	@Column(name = "symbol")
 	private String volume;
+	@Column(name = "symbol")
 	private String avgvol;
+	@Column(name = "symbol")
 	private String marketCap;
 
 	public Stock(String symbol, String lastPrice, String priceChange, String changePercentage, String marketTime,

@@ -20,10 +20,10 @@ public class StockController {
 		return "Stock Controller";
 	}
 	
-	@GetMapping(path="/testServices")
-		public Object StockService() {
-			return stockServices.displayStock().toString();
-		}
+//	@GetMapping(path="/testServices")
+//		public Object StockService() {
+//			return stockServices.displayStock().toString();
+//		}
 	
 
 }

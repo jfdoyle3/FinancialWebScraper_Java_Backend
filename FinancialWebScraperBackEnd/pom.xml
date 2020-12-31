@@ -79,6 +79,10 @@
 			<artifactId>selenium-htmlunit-driver</artifactId>
 			<version>2.52.0</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
@@ -94,6 +98,14 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.13.1</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+>>>>>>> dev
 	</dependencies>
 
 	<build>

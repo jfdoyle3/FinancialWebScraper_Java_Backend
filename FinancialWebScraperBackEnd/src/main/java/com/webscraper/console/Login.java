@@ -55,9 +55,12 @@ public class Login {
 			StockList stockTable = new StockList();
 			ArrayList<Stock> stocks = stockTable.createStockList(stockList);
 			System.out.printf("Scraping table completed.\n%d items scraped.\nWriting to Database", stocks.size());
-			DataBaseWriter db = new DataBaseWriter();
-			db.writeToDatabase(stocks);
-			System.out.println("Database entries completed\nEnd of Line.");
+			for (Stock stock : stocks) {
+				System.out.println(stock);
+			}
+//			DataBaseWriter db = new DataBaseWriter();
+//			db.writeToDatabase(stocks);
+//			System.out.println("Database entries completed\nEnd of Line.");
 			
 		} finally {
 			driver.quit();

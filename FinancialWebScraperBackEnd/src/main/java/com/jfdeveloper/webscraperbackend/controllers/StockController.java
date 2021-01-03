@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jfdeveloper.webscraperbackend.services.StockServices;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
 public class StockController {
 	
-	@Autowired
-	private StockServices stockServices;
+	//@Autowired
+	//private StockServices stockServices;
 	
 	
 	@GetMapping(path = "/stocks")

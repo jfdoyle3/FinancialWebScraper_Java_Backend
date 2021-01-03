@@ -17,8 +17,11 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Login {
+	
 
-	public static void signIn() throws InterruptedException, IOException {
+	
+
+	public static ArrayList<Stock> signIn() throws InterruptedException, IOException {
 
 		FirefoxOptions headless = new FirefoxOptions();
 		headless.setHeadless(true);
@@ -60,15 +63,18 @@ public class Login {
 			System.out.printf("Scraping table completed.\n%d items scraped.\nWriting to Database", stocks.size());
 			for (Stock stock : stocks) {
 				System.out.println(stock);
+				
 			}
+			return stocks;
 //			DataBaseWriter db = new DataBaseWriter();
 //			db.writeToDatabase(stocks);
 //			System.out.println("Database entries completed\nEnd of Line.");
 			
 		} finally {
 			driver.quit();
+			
 
 		}
-
+			
 	}
 }

@@ -1,4 +1,4 @@
-package com.jfdeveloper.webscraperbackend.entity.hibernate;
+package com.debug.temp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+
 
 
 public class DataBaseWriter {

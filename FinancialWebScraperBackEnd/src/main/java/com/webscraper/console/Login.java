@@ -58,9 +58,9 @@ public class Login {
 			for (Stock stock : stocks) {
 				System.out.println(stock);
 			}
-//			DataBaseWriter db = new DataBaseWriter();
-//			db.writeToDatabase(stocks);
-//			System.out.println("Database entries completed\nEnd of Line.");
+			DataBaseWriter db = new DataBaseWriter();
+			db.writeToDatabase(stocks);
+			System.out.println("Database entries completed\nEnd of Line.");
 			
 		} finally {
 			driver.quit();

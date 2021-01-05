@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,10 +19,12 @@ public class Login {
 
 	public static void signIn() throws InterruptedException, IOException {
 
-		FirefoxOptions headless = new FirefoxOptions();
+		ChromeOptions headless = new ChromeOptions();	// Chrome
+	//	FirefoxOptions headless = new FirefoxOptions(); // firefox
 		headless.setHeadless(true);
 
-		WebDriver driver = new FirefoxDriver(headless);
+		WebDriver driver = new ChromeDriver(headless);	// Chrome
+	//	WebDriver driver = new FirefoxDriver(headless);  // firefox
 		driver.get("https://finance.yahoo.com");
 		try {
 			System.out.println("Logging into Yahoo Financial Web Page");

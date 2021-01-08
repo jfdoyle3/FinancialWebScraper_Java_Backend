@@ -23,10 +23,10 @@ public class Login {
 
 	public static ArrayList<Stock> signIn() throws InterruptedException, IOException {
 
-		FirefoxOptions headless = new FirefoxOptions();
+		ChromeOptions headless = new ChromeOptions();
 		headless.setHeadless(true);
 
-		WebDriver driver = new FirefoxDriver(headless);
+		WebDriver driver = new ChromeDriver(headless);
 		driver.get("https://finance.yahoo.com");
 		try {
 			System.out.println("Logging into Yahoo Financial Web Page");

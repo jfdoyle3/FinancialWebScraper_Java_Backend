@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "stocktable")
-public class Stock {
+@Table(name = "history")
+public class StockHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer id;	
-	@Column(name="datestamp")
+	private Integer id;
+	@Column(name = "datestamp")
 	private String datestamp;
 	@Column(name = "symbol")
 	private String symbol;
@@ -46,10 +46,9 @@ public class Stock {
 //	}
 	@Override
 	public String toString() {
-		return "Stock [id=" + id + "datestamp=" + datestamp
-				+"symbol=" + symbol + ", lastPrice=" + lastPrice + ", priceChange=" + priceChange
-				+ ", changePercentage=" + changePercentage + ", marketTime=" + marketTime + ", volume=" + volume
-				+ ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
+		return "Stock [id=" + id + "datestamp=" + datestamp + "symbol=" + symbol + ", lastPrice=" + lastPrice
+				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
+				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
 
 	public void setSymbol(String symbol) {

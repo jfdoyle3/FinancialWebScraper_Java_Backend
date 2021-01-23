@@ -9,7 +9,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+import com.webscraper.console.Stock;
+
+//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import java.io.IOException;

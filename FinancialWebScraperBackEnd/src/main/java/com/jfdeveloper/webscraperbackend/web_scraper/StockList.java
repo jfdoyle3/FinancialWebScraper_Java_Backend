@@ -3,7 +3,9 @@ package com.jfdeveloper.webscraperbackend.web_scraper;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+import com.webscraper.console.Stock;
+
+//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
 
 public class StockList {
 

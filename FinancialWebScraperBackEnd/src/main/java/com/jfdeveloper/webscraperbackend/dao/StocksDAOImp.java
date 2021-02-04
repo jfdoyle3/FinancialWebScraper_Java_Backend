@@ -19,7 +19,7 @@ public class StocksDAOImp implements StocksDAO {
 	@Override
 	public List<Stock> get() {
 		Session currSession = entityManager.unwrap(Session.class);
-		Query<Stock> query = currSession.createQuery("from datestamp", Stock.class);
+		Query<Stock> query = currSession.createQuery("SELECT a FROM Stock a", Stock.class);
 		List<Stock> list = query.getResultList();
 		return list;
 	}

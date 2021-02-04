@@ -1,11 +1,15 @@
 package com.jfdeveloper.webscraperbackend.entity.objects;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "stocktable")
@@ -13,9 +17,10 @@ public class Stock {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer id;	
-	@Column(name="datestamp")
-	private String datestamp;
+	private Integer id;
+//	@Temporal(TemporalType.DATE)
+//	@Column(name = "datestamp", columnDefinition = "DATE")
+//	private Date datestamp;
 	@Column(name = "symbol")
 	private String symbol;
 	@Column(name = "lastPrice")
@@ -46,11 +51,20 @@ public class Stock {
 //	}
 	@Override
 	public String toString() {
-		return "Stock [id=" + id + "datestamp=" + datestamp
-				+"symbol=" + symbol + ", lastPrice=" + lastPrice + ", priceChange=" + priceChange
-				+ ", changePercentage=" + changePercentage + ", marketTime=" + marketTime + ", volume=" + volume
-				+ ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
+		return "Stock [id=" + id+ "symbol=" + symbol + ", lastPrice=" + lastPrice
+				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
+				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
+	
+	// Setters
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+//	public void setDateStamp(Date dateStamp) {
+//		this.datestamp = dateStamp;
+//	}
 
 	public void setSymbol(String symbol) {
 		this.symbol = symbol;
@@ -84,6 +98,9 @@ public class Stock {
 		this.marketCap = marketCap;
 	}
 
+//  getters	
+	
+	
 	public String getSymbol() {
 		return symbol;
 	}

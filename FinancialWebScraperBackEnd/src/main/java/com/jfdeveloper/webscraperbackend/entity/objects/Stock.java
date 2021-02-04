@@ -20,7 +20,8 @@ public class Stock {
 	private Integer id;
 //	@Temporal(TemporalType.DATE)
 //	@Column(name = "datestamp", columnDefinition = "DATE")
-//	private Date datestamp;
+	@Column(name = "datestamp")
+	private String datestamp;
 	@Column(name = "symbol")
 	private String symbol;
 	@Column(name = "lastPrice")
@@ -38,20 +39,10 @@ public class Stock {
 	@Column(name = "marketCap")
 	private String marketCap;
 
-//	public Stock(String symbol, String lastPrice, String priceChange, String changePercentage, String marketTime,
-//			String volume, String avgvol, String marketCap) {
-//		this.symbol = symbol;
-//		this.lastPrice = lastPrice;
-//		this.priceChange = priceChange;
-//		this.changePercentage = changePercentage;
-//		this.marketTime = marketTime;
-//		this.volume = volume;
-//		this.avgvol = avgvol;
-//		this.marketCap = marketCap;
-//	}
+
 	@Override
 	public String toString() {
-		return "Stock [id=" + id+ "symbol=" + symbol + ", lastPrice=" + lastPrice
+		return "Stock [id=" + id+"dateStamp="+datestamp+ "symbol=" + symbol + ", lastPrice=" + lastPrice
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
@@ -62,9 +53,9 @@ public class Stock {
 		this.id = id;
 	}
 
-//	public void setDateStamp(Date dateStamp) {
-//		this.datestamp = dateStamp;
-//	}
+	public void setDateStamp(String dateStamp) {
+		this.datestamp = dateStamp;
+	}
 
 	public void setSymbol(String symbol) {
 		this.symbol = symbol;
@@ -100,6 +91,9 @@ public class Stock {
 
 //  getters	
 	
+	public void getDateStamp(String dateStamp) {
+		this.datestamp = dateStamp;
+	}
 	
 	public String getSymbol() {
 		return symbol;

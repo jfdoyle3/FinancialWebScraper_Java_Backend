@@ -1,5 +1,7 @@
 package com.jfdeveloper.webscraperbackend.controllers;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+
+import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
+import com.jfdeveloper.webscraperbackend.web_scraper.Login;
 
 
 
@@ -22,24 +26,17 @@ public class StockController {
 	 private StockService stockService;
 	 
 	 @GetMapping("/stocks")
-	 public List<Stock> get() {
+	 public List<StockEntity> get() {
 	  return stockService.get();
 	 }
 	
-	//@Autowired
-	//private StockServices stockServices;
 	
-	
-//	@GetMapping(path = "/stocks")
-//	public  ArrayList<Stock> findAll() throws InterruptedException, IOException {
-//		var stocks=Login.signIn();
-//		return stocks;
-//	}
-//	@GetMapping(path = "/stocks")
-//	public  ArrayList<Stock> findAll() throws InterruptedException, IOException {
-//		var stocks=Login.signIn();
-//		return stocks;
-//	}
+	@GetMapping(path = "/scrape")
+	public  void scrape() throws InterruptedException, IOException {
+		Login.signIn();
+		
+	}
+
 }
 
 

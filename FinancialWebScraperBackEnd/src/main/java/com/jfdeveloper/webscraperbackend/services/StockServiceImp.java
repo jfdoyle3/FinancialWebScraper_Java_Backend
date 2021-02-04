@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jfdeveloper.webscraperbackend.dao.StocksDAO;
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 
 @Service
 public class StockServiceImp implements StockService {
@@ -17,7 +17,7 @@ public class StockServiceImp implements StockService {
 
 	@Transactional
 	@Override
-	public List<Stock> get() {
+	public List<StockEntity> get() {
 		return stockDao.get();
 	}
 

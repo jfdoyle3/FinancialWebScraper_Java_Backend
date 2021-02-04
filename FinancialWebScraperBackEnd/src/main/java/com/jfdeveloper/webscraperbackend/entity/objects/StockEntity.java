@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "stocktable")
-public class Stock {
+public class StockEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -42,7 +42,7 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [id=" + id+"dateStamp="+datestamp+ "symbol=" + symbol + ", lastPrice=" + lastPrice
+		return "Stock [id=" + id+", dateStamp="+datestamp+ ", symbol=" + symbol + ", lastPrice=" + lastPrice
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}

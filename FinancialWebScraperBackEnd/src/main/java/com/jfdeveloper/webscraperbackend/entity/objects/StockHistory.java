@@ -33,17 +33,7 @@ public class StockHistory {
 	@Column(name = "marketCap")
 	private String marketCap;
 
-//	public Stock(String symbol, String lastPrice, String priceChange, String changePercentage, String marketTime,
-//			String volume, String avgvol, String marketCap) {
-//		this.symbol = symbol;
-//		this.lastPrice = lastPrice;
-//		this.priceChange = priceChange;
-//		this.changePercentage = changePercentage;
-//		this.marketTime = marketTime;
-//		this.volume = volume;
-//		this.avgvol = avgvol;
-//		this.marketCap = marketCap;
-//	}
+
 	@Override
 	public String toString() {
 		return "Stock [id=" + id + "datestamp=" + datestamp + "symbol=" + symbol + ", lastPrice=" + lastPrice

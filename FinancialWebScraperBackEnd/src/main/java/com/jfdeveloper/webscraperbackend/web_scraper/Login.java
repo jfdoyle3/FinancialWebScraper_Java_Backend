@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.webscraper.console.Stock;
+import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
 
 //import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
 
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Login {
 	
-	public static ArrayList<Stock> signIn() throws InterruptedException, IOException {
+	public static  void signIn() throws InterruptedException, IOException {
 
 		ChromeOptions headless = new ChromeOptions();
 		headless.setHeadless(true);
@@ -64,7 +64,7 @@ public class Login {
 				System.out.println(stock);
 				
 			}
-			return stocks;
+//			return stocks;
 //			DataBaseWriter db = new DataBaseWriter();
 //			db.writeToDatabase(stocks);
 //			System.out.println("Database entries completed\nEnd of Line.");

@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 
 @Repository
 public class StocksDAOImp implements StocksDAO {
@@ -17,10 +17,10 @@ public class StocksDAOImp implements StocksDAO {
 	private EntityManager entityManager;
 
 	@Override
-	public List<Stock> get() {
+	public List<StockEntity> get() {
 		Session currSession = entityManager.unwrap(Session.class);
-		Query<Stock> query = currSession.createQuery("SELECT a FROM Stock a", Stock.class);
-		List<Stock> list = query.getResultList();
+		Query<StockEntity> query = currSession.createQuery("SELECT a FROM Stock a", StockEntity.class);
+		List<StockEntity> list = query.getResultList();
 		return list;
 	}
 }

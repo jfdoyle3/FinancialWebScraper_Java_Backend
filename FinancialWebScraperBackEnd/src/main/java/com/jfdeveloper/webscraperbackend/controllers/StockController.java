@@ -1,15 +1,15 @@
 package com.jfdeveloper.webscraperbackend.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
@@ -31,11 +31,19 @@ public class StockController {
 	 }
 	
 	
-	@GetMapping(path = "/scrape")
-	public  void scrape() throws InterruptedException, IOException {
-		Login.signIn();
-		
-	}
+//	@GetMapping(path = "/scrape")
+//	public  void scrape() throws InterruptedException, IOException {
+//		Login.signIn();
+//		
+//	}
+	
+	 @PostMapping("/stocks")
+	 public StockEntity save(@RequestBody StockEntity stocks) throws InterruptedException, IOException {
+	 var stockList=Login.signIn();
+	
+	  stockService.save(stocks);
+	  return stocks;
+	 }
 
 }
 

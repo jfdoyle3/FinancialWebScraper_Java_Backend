@@ -20,5 +20,12 @@ public class StockServiceImp implements StockService {
 	public List<StockEntity> get() {
 		return stockDao.get();
 	}
+	
+	@Transactional
+	 @Override
+	 public void save(StockEntity stock) {
+	  stockDao.save(stock);
+	  
+	 }
 
 }

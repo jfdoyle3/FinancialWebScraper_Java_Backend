@@ -1,5 +1,14 @@
 package com.jfdeveloper.webscraperbackend.web_scraper;
 
+//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,16 +20,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
 
-//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
 public class Login {
 	
-	public static  void signIn() throws InterruptedException, IOException {
+	public static List<Stock> signIn() throws InterruptedException, IOException {
 
 		ChromeOptions headless = new ChromeOptions();
 		headless.setHeadless(true);
@@ -63,6 +65,8 @@ public class Login {
 			for (Stock stock : stocks) {
 				System.out.println(stock);
 				
+			return stocks;
+				
 			}
 //			return stocks;
 //			DataBaseWriter db = new DataBaseWriter();
@@ -74,6 +78,7 @@ public class Login {
 			
 
 		}
+		return null;
 			
 	}
 }

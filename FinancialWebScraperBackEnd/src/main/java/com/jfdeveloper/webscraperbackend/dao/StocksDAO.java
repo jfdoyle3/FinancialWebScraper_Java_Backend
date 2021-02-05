@@ -7,4 +7,6 @@ import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 public interface StocksDAO {
 
 	List<StockEntity> get();
+	
+	void save(StockEntity stocks);
 }

@@ -23,4 +23,11 @@ public class StocksDAOImp implements StocksDAO {
 		List<StockEntity> list = query.getResultList();
 		return list;
 	}
+	
+	@Override
+	 public void save(StockEntity stock) {
+	  
+	  Session currSession = entityManager.unwrap(Session.class);
+	  currSession.saveOrUpdate(stock);
+	}
 }

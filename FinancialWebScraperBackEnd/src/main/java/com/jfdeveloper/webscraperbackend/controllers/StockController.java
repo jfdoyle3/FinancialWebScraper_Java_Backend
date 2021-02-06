@@ -39,8 +39,8 @@ public class StockController {
 	
 	 @PostMapping("/stocks")
 	 public StockEntity save(@RequestBody StockEntity stocks) throws InterruptedException, IOException {
-	 var stockList=Login.signIn();
-	
+	 //var stockList=Login.signIn();
+      
 	  stockService.save(stocks);
 	  return stocks;
 	 }

@@ -14,43 +14,34 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
 import com.jfdeveloper.webscraperbackend.web_scraper.Login;
-
-
+import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class StockController {
-	
-	 @Autowired
-	 private StockService stockService;
-	 
-	 @GetMapping("/stocks")
-	 public List<StockEntity> get() {
-	  return stockService.get();
-	 }
-	
-	
-//	@GetMapping(path = "/scrape")
-//	public  void scrape() throws InterruptedException, IOException {
-//		Login.signIn();
-//		
-//	}
-	
-	 @PostMapping("/stocks")
-	 public StockEntity save(@RequestBody StockEntity stocks) throws InterruptedException, IOException {
-	 //var stockList=Login.signIn();
-      // make array here
-	  stockService.save(stocks);
-	  return stocks;
-	 }
+
+	@Autowired
+	private StockService stockService;
+
+	@GetMapping("/stocks")
+	public List<StockEntity> get() {
+		return stockService.get();
+	}
+
+	@GetMapping(path = "/scrape")
+	public void scrape() throws InterruptedException, IOException {
+		List<Stock> stockList = Login.signIn();
+		System.out.printf("Scraping table completed.\n%d items scraped.", stockList.size());
+		for (Stock stock : stockList) {
+			System.out.println(stock);
+		}
+	}
+
+	@PostMapping("/stocks")
+	public StockEntity save(@RequestBody StockEntity stocks) {
+		stockService.save(stocks);
+		return stocks;
+	}
 
 }
-
-
-
-
-
-
- 
-

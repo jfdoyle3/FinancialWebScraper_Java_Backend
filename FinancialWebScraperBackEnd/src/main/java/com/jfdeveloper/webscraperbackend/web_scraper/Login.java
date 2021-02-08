@@ -61,14 +61,11 @@ public class Login {
 			ArrayList<String> stockList = data.scrape(driver.getPageSource());
 			StockList stockTable = new StockList();
 			ArrayList<Stock> stocks = stockTable.createStockList(stockList);
-			System.out.printf("Scraping table completed.\n%d items scraped.\nWriting to Database", stocks.size());
-			for (Stock stock : stocks) {
-				System.out.println(stock);
-				
+//			System.out.printf("Scraping table completed.\n%d items scraped.", stocks.size());
+//			for (Stock stock : stocks) {
+//				System.out.println(stock);
+//		}
 			return stocks;
-				
-			}
-//			return stocks;
 //			DataBaseWriter db = new DataBaseWriter();
 //			db.writeToDatabase(stocks);
 //			System.out.println("Database entries completed\nEnd of Line.");
@@ -78,7 +75,7 @@ public class Login {
 			
 
 		}
-		return null;
+	//	return null;
 			
 	}
 }

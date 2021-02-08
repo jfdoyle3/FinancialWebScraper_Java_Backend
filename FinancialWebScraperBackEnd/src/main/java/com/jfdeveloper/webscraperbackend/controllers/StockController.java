@@ -31,11 +31,12 @@ public class StockController {
 
 	@GetMapping(path = "/scrape")
 	public void scrape() throws InterruptedException, IOException {
-		List<Stock> stockList = Login.signIn();
-		System.out.printf("Scraping table completed.\n%d items scraped.", stockList.size());
-		for (Stock stock : stockList) {
-			System.out.println(stock);
-		}
+	//	List<Stock> stockList = Login.signIn();
+		Login.signIn();
+//		System.out.printf("Scraping table completed.\n%d items scraped.", stockList.size());
+//		for (Stock stock : stockList) {
+//			System.out.println(stock);
+//		}
 	}
 
 	@PostMapping("/stocks")

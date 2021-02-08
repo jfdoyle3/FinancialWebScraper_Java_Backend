@@ -22,7 +22,7 @@ import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
 
 public class Login {
 	
-	public static List<Stock> signIn() throws InterruptedException, IOException {
+	public static void signIn() throws InterruptedException, IOException {
 
 		ChromeOptions headless = new ChromeOptions();
 		headless.setHeadless(true);
@@ -65,10 +65,10 @@ public class Login {
 //			for (Stock stock : stocks) {
 //				System.out.println(stock);
 //		}
-			return stocks;
-//			DataBaseWriter db = new DataBaseWriter();
-//			db.writeToDatabase(stocks);
-//			System.out.println("Database entries completed\nEnd of Line.");
+//			return stocks;
+			DataBaseWriter db = new DataBaseWriter();
+			db.writeToDatabase(stocks);
+			System.out.println("Database entries completed\nEnd of Line.");
 			
 		} finally {
 			driver.quit();

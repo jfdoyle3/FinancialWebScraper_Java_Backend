@@ -2,6 +2,8 @@ package com.webscraper.console;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.sql.Timestamp;
+
 
 public class StockList {
 
@@ -13,12 +15,17 @@ public class StockList {
 			tableData.remove("-");
 			tableData.remove("USD");
 		}
-		int rows = (tableData.size() / 8) - 1;
+		int rows = (tableData.size() / 9) - 1;
 
+		Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
+	
+		String strTimeStamp=timeStamp.toString();
+		
 		Iterator<String> itr = tableData.iterator();
 
 		for (int idx = 0; idx < rows; idx++) {
-			Stock share = new Stock(itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
+			
+			Stock share = new Stock(strTimeStamp, itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
 					itr.next());
 
 			stockList.add(share);

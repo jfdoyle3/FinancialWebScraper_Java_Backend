@@ -18,13 +18,14 @@ public class StockEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-//	@Temporal(TemporalType.DATE)
-//	@Column(name = "datestamp", columnDefinition = "DATE")
+
+	@Temporal(TemporalType.DATE)
 	@Column(name = "datestamp")
-	private String datestamp;
+	private Date dateStamp;
+	
 	@Column(name = "symbol")
 	private String symbol;
-	@Column(name = "lastPrice")
+	@Column(name = "last_price")
 	private String lastPrice;
 	@Column(name = "priceChange")
 	private String priceChange;
@@ -39,22 +40,21 @@ public class StockEntity {
 	@Column(name = "marketCap")
 	private String marketCap;
 
-
 	@Override
 	public String toString() {
-		return "Stock [id=" + id+", dateStamp="+datestamp+ ", symbol=" + symbol + ", lastPrice=" + lastPrice
+		return "Stock [id=" + id + ", dateStamp=" + dateStamp + ", symbol=" + symbol + ", lastPrice=" + lastPrice
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
-	
+
 	// Setters
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public void setDateStamp(String dateStamp) {
-		this.datestamp = dateStamp;
+	public void setDateStamp(Date dateStamp) {
+		this.dateStamp = dateStamp;
 	}
 
 	public void setSymbol(String symbol) {
@@ -90,11 +90,15 @@ public class StockEntity {
 	}
 
 //  getters	
-	
-	public void getDateStamp(String dateStamp) {
-		this.datestamp = dateStamp;
+
+	public void getId(Integer id) {
+		this.id = id;
 	}
-	
+
+	public void getDateStamp(Date dateStamp) {
+		this.dateStamp = dateStamp;
+	}
+
 	public String getSymbol() {
 		return symbol;
 	}

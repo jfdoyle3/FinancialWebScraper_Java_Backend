@@ -1,6 +1,7 @@
 package com.jfdeveloper.webscraperbackend.web_scraper;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
@@ -17,12 +18,17 @@ public class StockList {
 			tableData.remove("-");
 			tableData.remove("USD");
 		}
-		int rows = (tableData.size() / 8) - 1;
+		int rows = (tableData.size() / 9) - 1;
+		
+
+		Date timeStamp = new Date(System.currentTimeMillis());
+	
+		String strTimeStamp=timeStamp.toString();
 
 		Iterator<String> itr = tableData.iterator();
 
 		for (int idx = 0; idx < rows; idx++) {
-			Stock share = new Stock(itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
+			Stock share = new Stock(strTimeStamp,itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
 					itr.next());
 
 			stockList.add(share);

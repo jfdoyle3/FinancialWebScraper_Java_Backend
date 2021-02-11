@@ -1,7 +1,9 @@
 package com.webscraper.console;
 
+
 public class Stock {
 
+	private String dateTime;
 	private String symbol;
 	private String lastPrice;
 	private String priceChange;
@@ -11,8 +13,9 @@ public class Stock {
 	private String avgvol;
 	private String marketCap;
 
-	public Stock(String symbol, String lastPrice, String priceChange, String changePercentage, String marketTime,
-			String volume, String avgvol, String marketCap) {
+	public Stock(String dateTime, String symbol, String lastPrice, String priceChange, String changePercentage,
+			String marketTime, String volume, String avgvol, String marketCap) {
+		this.dateTime = dateTime;
 		this.symbol = symbol;
 		this.lastPrice = lastPrice;
 		this.priceChange = priceChange;
@@ -21,6 +24,10 @@ public class Stock {
 		this.volume = volume;
 		this.avgvol = avgvol;
 		this.marketCap = marketCap;
+	}
+
+	public String getDateTime() {
+		return dateTime;
 	}
 
 	public String getSymbol() {
@@ -57,9 +64,9 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [symbol=" + symbol + ", lastPrice=" + lastPrice + ", priceChange=" + priceChange
-				+ ", changePercentage=" + changePercentage + ", marketTime=" + marketTime + ", volume=" + volume
-				+ ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
+		return "Stock [dateTime=" + dateTime + ", symbol=" + symbol + ", lastPrice=" + lastPrice + ", priceChange="
+				+ priceChange + ", changePercentage=" + changePercentage + ", marketTime=" + marketTime + ", volume="
+				+ volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
 
 }

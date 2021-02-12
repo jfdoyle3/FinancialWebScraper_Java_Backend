@@ -1,8 +1,9 @@
 package com.webscraper.console;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
-import java.sql.Timestamp;
+
 
 
 public class StockList {
@@ -17,7 +18,7 @@ public class StockList {
 		}
 		int rows = (tableData.size() / 9) - 1;
 
-		Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
+		Date timeStamp = new Date(System.currentTimeMillis());
 	
 		String strTimeStamp=timeStamp.toString();
 		

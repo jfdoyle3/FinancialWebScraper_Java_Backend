@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
 import com.jfdeveloper.webscraperbackend.web_scraper.Login;
-import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")

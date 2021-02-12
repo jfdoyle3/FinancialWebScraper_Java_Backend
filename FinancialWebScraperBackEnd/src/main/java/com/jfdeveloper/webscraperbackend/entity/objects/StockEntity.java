@@ -20,83 +20,46 @@ public class StockEntity {
 	private Integer id;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "datestamp")
-	private Date dateStamp;
+	@Column(name = "dateScraped")
+	private Date dateScraped;
 	
 	@Column(name = "symbol")
 	private String symbol;
-	@Column(name = "last_price")
+	
+	@Column(name = "lastPrice")
 	private String lastPrice;
+	
 	@Column(name = "priceChange")
 	private String priceChange;
+	
 	@Column(name = "changePercentage")
 	private String changePercentage;
+	
 	@Column(name = "marketTime")
 	private String marketTime;
+	
 	@Column(name = "volume")
 	private String volume;
+	
 	@Column(name = "avgvol")
 	private String avgvol;
+	
 	@Column(name = "marketCap")
 	private String marketCap;
 
 	@Override
 	public String toString() {
-		return "Stock [id=" + id + ", dateStamp=" + dateStamp + ", symbol=" + symbol + ", lastPrice=" + lastPrice
+		return "Stock [id=" + id + ", dateScraped=" + dateScraped + ", symbol=" + symbol + ", lastPrice=" + lastPrice
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
 
-	// Setters
-
-	public void setId(Integer id) {
-		this.id = id;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setDateStamp(Date dateStamp) {
-		this.dateStamp = dateStamp;
-	}
-
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
-	}
-
-	public void setLastPrice(String lastPrice) {
-		this.lastPrice = lastPrice;
-	}
-
-	public void setPriceChange(String priceChange) {
-		this.priceChange = priceChange;
-	}
-
-	public void setChangePercentage(String changePercentage) {
-		this.changePercentage = changePercentage;
-	}
-
-	public void setMarketTime(String marketTime) {
-		this.marketTime = marketTime;
-	}
-
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
-
-	public void setAvgvol(String avgvol) {
-		this.avgvol = avgvol;
-	}
-
-	public void setMarketCap(String marketCap) {
-		this.marketCap = marketCap;
-	}
-
-//  getters	
-
-	public void getId(Integer id) {
-		this.id = id;
-	}
-
-	public void getDateStamp(Date dateStamp) {
-		this.dateStamp = dateStamp;
+	public Date getDateScraped() {
+		return dateScraped;
 	}
 
 	public String getSymbol() {
@@ -130,5 +93,6 @@ public class StockEntity {
 	public String getMarketCap() {
 		return marketCap;
 	}
+
 
 }

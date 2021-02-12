@@ -18,11 +18,11 @@ public class DataBaseWriter {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.1.201/financialscraper",
 					"jfdoyle3", "Fl1pp3r6467");
 
-			String sql = "INSERT INTO stocktable (datestamp, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(sql);
 
 			for (int idx = 0; idx < stockList.size(); idx++) {
-				statement.setString(1, stockList.get(idx).getDateTime());
+				statement.setString(1, stockList.get(idx).getDateScraped());
 				statement.setString(2, stockList.get(idx).getSymbol());
 				statement.setString(3, stockList.get(idx).getLastPrice());
 				statement.setString(4, stockList.get(idx).getPriceChange());

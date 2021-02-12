@@ -1,7 +1,9 @@
 package com.jfdeveloper.webscraperbackend.web_scraper;
 
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 
 import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
@@ -20,10 +22,12 @@ public class StockList {
 		}
 		int rows = (tableData.size() / 9) - 1;
 		
+		LocalDateTime todaysDate = LocalDateTime.now();
+		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-		Date timeStamp = new Date(System.currentTimeMillis());
-	
-		String strTimeStamp=timeStamp.toString();
+//	Date timeStamp = new Date(System.currentTimeMillis());
+		String strTimeStamp = todaysDate.format(formatDate);
+		// String strTimeStamp=timeStamp.toString();
 
 		Iterator<String> itr = tableData.iterator();
 

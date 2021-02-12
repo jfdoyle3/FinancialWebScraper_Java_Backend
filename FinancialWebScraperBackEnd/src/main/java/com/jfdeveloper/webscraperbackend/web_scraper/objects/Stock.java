@@ -63,9 +63,9 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [dateScraped=" + dateScraped + ", symbol=" + symbol + ", lastPrice=" + lastPrice + ", priceChange="
-				+ priceChange + ", changePercentage=" + changePercentage + ", marketTime=" + marketTime + ", volume="
-				+ volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
+		return "Stock [dateScraped=" + dateScraped + ", symbol=" + symbol + ", lastPrice=" + lastPrice
+				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
+				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
 
 }

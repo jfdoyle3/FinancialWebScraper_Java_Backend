@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
 import com.jfdeveloper.webscraperbackend.web_scraper.Login;
-
+import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,6 +27,11 @@ public class StockController {
 	@GetMapping("/stocks")
 	public List<StockEntity> get() {
 		return stockService.get();
+	}
+	
+	@GetMapping("/history")
+	public List<HistoryEntity> getHistory() {
+		return stockService.getHistory();
 	}
 
 	@GetMapping(path = "/scrape")

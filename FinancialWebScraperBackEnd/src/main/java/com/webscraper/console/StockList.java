@@ -1,8 +1,11 @@
 package com.webscraper.console;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import com.webscraper.console.Stock;
 
 
 
@@ -17,16 +20,15 @@ public class StockList {
 			tableData.remove("USD");
 		}
 		int rows = (tableData.size() / 9) - 1;
-
-		Date timeStamp = new Date(System.currentTimeMillis());
-	
-		String strTimeStamp=timeStamp.toString();
 		
+		LocalDateTime todaysDate = LocalDateTime.now();
+		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String strTimeStamp = todaysDate.format(formatDate);
+
 		Iterator<String> itr = tableData.iterator();
 
 		for (int idx = 0; idx < rows; idx++) {
-			
-			Stock share = new Stock(strTimeStamp, itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
+			Stock share = new Stock(strTimeStamp,itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(), itr.next(),
 					itr.next());
 
 			stockList.add(share);
@@ -34,5 +36,4 @@ public class StockList {
 
 		return stockList;
 	}
-
 }

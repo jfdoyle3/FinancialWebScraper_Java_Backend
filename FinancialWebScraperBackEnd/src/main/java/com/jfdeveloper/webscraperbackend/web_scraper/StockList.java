@@ -24,10 +24,7 @@ public class StockList {
 		
 		LocalDateTime todaysDate = LocalDateTime.now();
 		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-//	Date timeStamp = new Date(System.currentTimeMillis());
 		String strTimeStamp = todaysDate.format(formatDate);
-		// String strTimeStamp=timeStamp.toString();
 
 		Iterator<String> itr = tableData.iterator();
 

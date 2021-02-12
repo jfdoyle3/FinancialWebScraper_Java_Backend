@@ -1,21 +1,26 @@
 package com.jfdeveloper.webscraperbackend.entity.objects;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "history")
-public class StockHistory {
+public class HistoryEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "datestamp")
-	private String datestamp;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "dateScraped")
+	private Date dateScraped;
 	@Column(name = "symbol")
 	private String symbol;
 	@Column(name = "lastPrice")
@@ -33,44 +38,19 @@ public class StockHistory {
 	@Column(name = "marketCap")
 	private String marketCap;
 
-
 	@Override
 	public String toString() {
-		return "Stock [id=" + id + "datestamp=" + datestamp + "symbol=" + symbol + ", lastPrice=" + lastPrice
+		return "Stock [id=" + id + "dateScraped=" + dateScraped + "symbol=" + symbol + ", lastPrice=" + lastPrice
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
 
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setLastPrice(String lastPrice) {
-		this.lastPrice = lastPrice;
-	}
-
-	public void setPriceChange(String priceChange) {
-		this.priceChange = priceChange;
-	}
-
-	public void setChangePercentage(String changePercentage) {
-		this.changePercentage = changePercentage;
-	}
-
-	public void setMarketTime(String marketTime) {
-		this.marketTime = marketTime;
-	}
-
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
-
-	public void setAvgvol(String avgvol) {
-		this.avgvol = avgvol;
-	}
-
-	public void setMarketCap(String marketCap) {
-		this.marketCap = marketCap;
+	public Date getDateScraped() {
+		return dateScraped;
 	}
 
 	public String getSymbol() {

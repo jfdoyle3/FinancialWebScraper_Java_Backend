@@ -19,11 +19,9 @@ public class DataBaseWriter {
 					"jfdoyle3", "Fl1pp3r6467");
 			
 
-<<<<<<< HEAD
-			String sql = "INSERT INTO stocktable (date_stamp, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
-=======
-			String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
->>>>>>> main
+
+		String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
+
 			PreparedStatement statement = connection.prepareStatement(sql);
 
 			for (int idx = 0; idx < stockList.size(); idx++) {

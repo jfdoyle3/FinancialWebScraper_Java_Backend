@@ -18,11 +18,9 @@ public class StockEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-<<<<<<< HEAD
-//	@Temporal(TemporalType.DATE)
-//	@Column(name = "datestamp", columnDefinition = "DATE")
-	@Column(name = "datestamp")
-	private String datestamp;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "dateScraped")
+	private Date dateScraped;
 	@Column(name = "symbol")
 	private String symbol;
 	@Column(name = "lastPrice")
@@ -96,7 +94,7 @@ public class StockEntity {
 		this.datestamp = dateStamp;
 	}
 	
-=======
+
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "dateScraped")
@@ -141,7 +139,7 @@ public class StockEntity {
 		return dateScraped;
 	}
 
->>>>>>> main
+
 	public String getSymbol() {
 		return symbol;
 	}
@@ -174,8 +172,4 @@ public class StockEntity {
 		return marketCap;
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 }

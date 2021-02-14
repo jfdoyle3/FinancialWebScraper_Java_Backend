@@ -1,26 +1,11 @@
 package com.jfdeveloper.webscraperbackend.controllers;
 
 import java.io.IOException;
-<<<<<<< HEAD
-import java.util.ArrayList;
-=======
->>>>>>> main
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-
-import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
-import com.jfdeveloper.webscraperbackend.services.StockService;
-import com.jfdeveloper.webscraperbackend.web_scraper.Login;
-
-
-=======
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +16,6 @@ import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.services.StockService;
 import com.jfdeveloper.webscraperbackend.web_scraper.Login;
->>>>>>> main
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -46,7 +30,7 @@ public class StockController {
 		return stockService.get();
 	}
 	
-<<<<<<< HEAD
+
 	 @Autowired
 	 private StockService stockService;
 	 
@@ -61,7 +45,7 @@ public class StockController {
 		Login.signIn();
 		
 	}
-=======
+
 	@GetMapping("/history")
 	public List<HistoryEntity> getHistory() {
 		return stockService.getHistory();
@@ -87,7 +71,7 @@ public class StockController {
 	 public HistoryEntity get(@PathVariable int id) {
 	  return stockService.get(id);
 	 }
->>>>>>> main
+
 
 }
 

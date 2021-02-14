@@ -12,22 +12,36 @@ import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
 @Service
-public class StockServiceImp implements StockService {
+public class HistoryServiceImp implements HistoryService {
 
 	@Autowired
 	private StocksDAO stockDao;
 
+	
+
 	@Transactional
 	@Override
-	public List<StockEntity> getScrape() {
-		return stockDao.getScrape();
+	public List<HistoryEntity> getHistory() {
+		return stockDao.getHistory();
 	}
 
 	@Transactional
 	@Override
-	public void saveStock(StockEntity stock) {
-		stockDao.saveStock(stock);
-
+	public HistoryEntity get(int id) {
+		return stockDao.get(id);
 	}
+
+	@Transactional
+	@Override
+	public List<HistoryEntity> findBySymbol(String symbol) {
+		return stockDao.findBySymbol(symbol);
+	}
+
+	@Transactional
+	@Override
+	public List<HistoryEntity> findByDate(Date date) {
+		return stockDao.findByDate(date);
+	}
+	
 
 }

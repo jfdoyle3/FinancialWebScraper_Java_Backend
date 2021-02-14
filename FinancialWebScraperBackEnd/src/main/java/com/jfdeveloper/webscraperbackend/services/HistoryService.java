@@ -6,11 +6,16 @@ import java.util.List;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
-public interface StockService {
-	
-List<StockEntity> getScrape();
-
-void saveStock(StockEntity stock);
+public interface HistoryService {
 
 
+List<HistoryEntity> getHistory();
+
+HistoryEntity get(int id);
+
+List<HistoryEntity> findBySymbol(String symbol);
+
+List<HistoryEntity> findByDate(Date date);
+
+  
 }

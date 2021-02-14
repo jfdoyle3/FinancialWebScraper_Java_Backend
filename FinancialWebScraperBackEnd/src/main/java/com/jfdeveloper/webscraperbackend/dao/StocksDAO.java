@@ -1,5 +1,6 @@
 package com.jfdeveloper.webscraperbackend.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
@@ -7,13 +8,22 @@ import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
 public interface StocksDAO {
 
-	List<StockEntity> get();
+	List<StockEntity> getScrape();
 	
-	void save(StockEntity stocks);
+	void saveStock(StockEntity stocks);
 
+	
+	// History
+	
 	List<HistoryEntity> getHistory();
 
 	HistoryEntity get(int id);
+
+	List<HistoryEntity> findBySymbol(String symbol);
+
+	List<HistoryEntity> findByDate(Date date);
+
+	
 
 
 }

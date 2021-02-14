@@ -18,6 +18,7 @@ public class StockEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
+<<<<<<< HEAD
 //	@Temporal(TemporalType.DATE)
 //	@Column(name = "datestamp", columnDefinition = "DATE")
 	@Column(name = "datestamp")
@@ -95,6 +96,52 @@ public class StockEntity {
 		this.datestamp = dateStamp;
 	}
 	
+=======
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "dateScraped")
+	private Date dateScraped;
+	
+	@Column(name = "symbol")
+	private String symbol;
+	
+	@Column(name = "lastPrice")
+	private String lastPrice;
+	
+	@Column(name = "priceChange")
+	private String priceChange;
+	
+	@Column(name = "changePercentage")
+	private String changePercentage;
+	
+	@Column(name = "marketTime")
+	private String marketTime;
+	
+	@Column(name = "volume")
+	private String volume;
+	
+	@Column(name = "avgvol")
+	private String avgvol;
+	
+	@Column(name = "marketCap")
+	private String marketCap;
+
+	@Override
+	public String toString() {
+		return "Stock [id=" + id + ", dateScraped=" + dateScraped + ", symbol=" + symbol + ", lastPrice=" + lastPrice
+				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
+				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public Date getDateScraped() {
+		return dateScraped;
+	}
+
+>>>>>>> main
 	public String getSymbol() {
 		return symbol;
 	}
@@ -127,4 +174,8 @@ public class StockEntity {
 		return marketCap;
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 }

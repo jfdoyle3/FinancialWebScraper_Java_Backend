@@ -1,0 +1,2 @@
+TRUNCATE TABLE stocktable;
+ALTER TABLE stocktable AUTO_INCREMENT = 1;

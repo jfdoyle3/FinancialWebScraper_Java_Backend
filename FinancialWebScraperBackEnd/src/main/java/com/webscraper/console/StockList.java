@@ -1,12 +1,11 @@
-package com.jfdeveloper.webscraperbackend.web_scraper;
+package com.webscraper.console;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
-
-import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
+import com.webscraper.console.Stock;
 
 
 
@@ -37,5 +36,4 @@ public class StockList {
 
 		return stockList;
 	}
-
 }

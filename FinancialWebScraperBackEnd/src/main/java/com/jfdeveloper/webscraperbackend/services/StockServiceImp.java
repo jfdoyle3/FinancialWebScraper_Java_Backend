@@ -8,6 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jfdeveloper.webscraperbackend.dao.StocksDAO;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
+<<<<<<< HEAD
+=======
+import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
+>>>>>>> main
 
 @Service
 public class StockServiceImp implements StockService {
@@ -20,5 +24,28 @@ public class StockServiceImp implements StockService {
 	public List<StockEntity> get() {
 		return stockDao.get();
 	}
+<<<<<<< HEAD
+=======
+	
+	@Transactional
+	 @Override
+	 public void save(StockEntity stock) {
+	  stockDao.save(stock);
+	  
+	 }
+
+	
+	@Transactional
+	@Override
+	public List<HistoryEntity> getHistory() {
+		return stockDao.getHistory();
+	}
+	
+	@Transactional
+	 @Override
+	 public HistoryEntity get(int id) {
+	  return stockDao.get(id);
+	 }
+>>>>>>> main
 
 }

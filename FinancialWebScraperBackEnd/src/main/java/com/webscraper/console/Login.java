@@ -1,13 +1,4 @@
-package com.jfdeveloper.webscraperbackend.web_scraper;
-
-//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+package com.webscraper.console;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -15,33 +6,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
-<<<<<<< HEAD
-
-//import com.jfdeveloper.webscraperbackend.entity.objects.Stock;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import com.webscraper.console.Stock;
 
 public class Login {
-	
-	public static  void signIn() throws InterruptedException, IOException {
-=======
 
-public class Login {
-	
 	public static void signIn() throws InterruptedException, IOException {
->>>>>>> main
 
-		ChromeOptions headless = new ChromeOptions();
+		ChromeOptions headless = new ChromeOptions();	// Chrome
+	//	FirefoxOptions headless = new FirefoxOptions(); // firefox
 		headless.setHeadless(true);
 
-		WebDriver driver = new ChromeDriver(headless);
+		WebDriver driver = new ChromeDriver(headless);	// Chrome
+	//	WebDriver driver = new FirefoxDriver(headless);  // firefox
 		driver.get("https://finance.yahoo.com");
 		try {
 			System.out.println("Logging into Yahoo Financial Web Page");
@@ -75,33 +59,18 @@ public class Login {
 			ArrayList<String> stockList = data.scrape(driver.getPageSource());
 			StockList stockTable = new StockList();
 			ArrayList<Stock> stocks = stockTable.createStockList(stockList);
-<<<<<<< HEAD
 			System.out.printf("Scraping table completed.\n%d items scraped.\nWriting to Database", stocks.size());
 			for (Stock stock : stocks) {
 				System.out.println(stock);
-				
 			}
-//			return stocks;
-//			DataBaseWriter db = new DataBaseWriter();
-//			db.writeToDatabase(stocks);
-//			System.out.println("Database entries completed\nEnd of Line.");
-=======
-//			System.out.printf("Scraping table completed.\n%d items scraped.", stocks.size());
-//			for (Stock stock : stocks) {
-//				System.out.println(stock);
-//		}
-//			return stocks;
 			DataBaseWriter db = new DataBaseWriter();
 			db.writeToDatabase(stocks);
 			System.out.println("Database entries completed\nEnd of Line.");
->>>>>>> main
 			
 		} finally {
 			driver.quit();
-			
 
 		}
-	//	return null;
-			
+
 	}
 }

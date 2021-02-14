@@ -1,4 +1,4 @@
-package com.webscraper.console;
+package com.jfdeveloper.webscraperbackend.web_scraper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import com.webscraper.console.Stock;
+import com.jfdeveloper.webscraperbackend.web_scraper.objects.Stock;
 
 public class DataBaseWriter {
 
@@ -17,13 +17,14 @@ public class DataBaseWriter {
 
 			Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.1.201/financialscraper",
 					"jfdoyle3", "Fl1pp3r6467");
-			
 
-<<<<<<< HEAD
-			String sql = "INSERT INTO stocktable (date_stamp, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
-=======
+			System.out.println("Moving to History");
+			String queryHistoryEntry = "INSERT history SELECT * FROM stocktable;";
+			PreparedStatement transferToTable = connection.prepareStatement(queryHistoryEntry);
+			transferToTable.executeUpdate();
+			System.out.println("Done");
+			
 			String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
->>>>>>> main
 			PreparedStatement statement = connection.prepareStatement(sql);
 
 			for (int idx = 0; idx < stockList.size(); idx++) {

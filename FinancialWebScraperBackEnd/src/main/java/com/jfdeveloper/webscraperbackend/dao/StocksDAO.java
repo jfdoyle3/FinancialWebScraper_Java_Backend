@@ -15,5 +15,5 @@ public interface StocksDAO {
 
 	HistoryEntity get(int id);
 
-	HistoryEntity getSymbol(String symbol);
+
 }

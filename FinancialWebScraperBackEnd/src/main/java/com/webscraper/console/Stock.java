@@ -1,6 +1,5 @@
 package com.webscraper.console;
 
-
 public class Stock {
 
 	private String dateScraped;
@@ -68,6 +67,5 @@ public class Stock {
 				+ ", priceChange=" + priceChange + ", changePercentage=" + changePercentage + ", marketTime="
 				+ marketTime + ", volume=" + volume + ", avgvol=" + avgvol + ", marketCap=" + marketCap + "]";
 	}
-
 
 }

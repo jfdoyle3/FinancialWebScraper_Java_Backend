@@ -60,9 +60,6 @@ public class StocksDAOImp implements StocksDAO {
 ////	  HistoryEntity foundSymbol= currSession.get(HistoryEntity.class, symbol);
 //	  return list;
 //	 }
-	@Override
-	List<HistoryEntity> findBySymbol(String symbol) {
-	return null;
-}
+
 
 }

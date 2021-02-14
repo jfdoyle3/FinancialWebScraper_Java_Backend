@@ -35,5 +35,11 @@ public class StockServiceImp implements StockService {
 	public List<HistoryEntity> getHistory() {
 		return stockDao.getHistory();
 	}
+	
+	@Transactional
+	 @Override
+	 public HistoryEntity get(int id) {
+	  return stockDao.get(id);
+	 }
 
 }

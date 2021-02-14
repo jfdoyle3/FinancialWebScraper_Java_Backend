@@ -11,5 +11,7 @@ List<StockEntity> get();
 void save(StockEntity stock);
 
 List<HistoryEntity> getHistory();
+
+HistoryEntity get(int id);
   
 }

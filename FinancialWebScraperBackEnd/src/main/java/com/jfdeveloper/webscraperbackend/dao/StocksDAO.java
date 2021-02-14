@@ -12,4 +12,8 @@ public interface StocksDAO {
 	void save(StockEntity stocks);
 
 	List<HistoryEntity> getHistory();
+
+	HistoryEntity get(int id);
+
+	HistoryEntity getSymbol(String symbol);
 }

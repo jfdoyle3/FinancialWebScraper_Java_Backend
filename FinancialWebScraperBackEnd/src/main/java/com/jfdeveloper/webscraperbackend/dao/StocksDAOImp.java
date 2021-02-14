@@ -4,13 +4,15 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
+import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
 
 @Repository
 public class StocksDAOImp implements StocksDAO {
@@ -41,5 +43,26 @@ public class StocksDAOImp implements StocksDAO {
 		return list;
 	}
 	
+	@Override
+	 public HistoryEntity get(int id) {
+	  Session currSession = entityManager.unwrap(Session.class);
+	  HistoryEntity stock= currSession.get(HistoryEntity.class, id);
+	  return stock;
+	 }
+	
+	
+//	@Override
+//	 public HistoryEntity getSymbol(String symbol) {
+//		Session currSession = entityManager.unwrap(Session.class);
+//		Criteria criteria = currSession.createCriteria(HistoryEntity.class);;
+//		List<HistoryEntity> list = criteria.add(Restrictions.eq("symbol", symbol)).list();
+////	  Session currSession = entityManager.unwrap(Session.class);
+////	  HistoryEntity foundSymbol= currSession.get(HistoryEntity.class, symbol);
+//	  return list;
+//	 }
+	@Override
+	List<HistoryEntity> findBySymbol(String symbol) {
+	return null;
+}
 
 }

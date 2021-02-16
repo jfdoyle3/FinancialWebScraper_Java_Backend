@@ -3,7 +3,7 @@ package com.jfdeveloper.webscraperbackend.services;
 import java.util.Date;
 import java.util.List;
 
-import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
+
 import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
 public interface HistoryService {

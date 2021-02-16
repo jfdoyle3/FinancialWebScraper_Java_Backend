@@ -1,6 +1,6 @@
 package com.jfdeveloper.webscraperbackend.services;
 
-import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jfdeveloper.webscraperbackend.dao.StocksDAO;
 import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
-import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
+
 
 @Service
 public class StockServiceImp implements StockService {

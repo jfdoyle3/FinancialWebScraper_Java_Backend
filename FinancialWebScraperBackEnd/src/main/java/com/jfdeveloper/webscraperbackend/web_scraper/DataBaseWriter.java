@@ -18,11 +18,11 @@ public class DataBaseWriter {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.1.201/financialscraper",
 					"jfdoyle3", "Fl1pp3r6467");
 
-			System.out.println("Moving to History");
-			String queryHistoryEntry = "INSERT history SELECT * FROM stocktable;";
-			PreparedStatement transferToTable = connection.prepareStatement(queryHistoryEntry);
-			transferToTable.executeUpdate();
-			System.out.println("Done");
+//			System.out.println("Moving to History");
+//			String queryHistoryEntry = "INSERT history SELECT * FROM stocktable;";
+//			PreparedStatement transferToTable = connection.prepareStatement(queryHistoryEntry);
+//			transferToTable.executeUpdate();
+//			System.out.println("Done");
 			
 			String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(sql);

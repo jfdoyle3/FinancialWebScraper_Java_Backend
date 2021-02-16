@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jfdeveloper.webscraperbackend.dao.StocksDAO;
-import com.jfdeveloper.webscraperbackend.entity.objects.StockEntity;
+
 import com.jfdeveloper.webscraperbackend.entity.objects.HistoryEntity;
 
 @Service

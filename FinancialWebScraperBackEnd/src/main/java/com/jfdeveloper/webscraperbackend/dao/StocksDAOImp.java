@@ -68,9 +68,9 @@ public class StocksDAOImp implements StocksDAO {
 	@Override
 	 public List<HistoryEntity> findByDate(Date date) {
 		Session currSession = entityManager.unwrap(Session.class);
-		Query<HistoryEntity> queryDates = currSession.createQuery("FROM HistoryEntity D WHERE D.date_scraped=:date", HistoryEntity.class);
-		queryDates.setParameter("date_scraped", date);
-		List<HistoryEntity> listFoundDates = queryDates.getResultList();
+		Query<HistoryEntity> queryDate = currSession.createQuery("FROM HistoryEntity D WHERE D.dateScraped=:date", HistoryEntity.class);
+		queryDate.setParameter("date", date);
+		List<HistoryEntity> listFoundDates = queryDate.getResultList();
 		return listFoundDates;
 	 }
 

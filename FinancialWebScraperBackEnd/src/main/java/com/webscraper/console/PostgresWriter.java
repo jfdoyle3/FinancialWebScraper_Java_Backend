@@ -9,14 +9,11 @@ import java.util.ArrayList;
 public class PostgresWriter {
 
 	public void writeToDatabase(ArrayList<Stock> stockList) {
-		Connection connection=null;
+		Connection connection = null;
 		try {
 
-//			 connection = DriverManager.getConnection("jdbc:mysql://192.168.1.201/financialscraper",
-//					"jfdoyle3", "Fl1pp3r6467");
-			
-			 connection = DriverManager .getConnection("jdbc:postgresql://localhost:5432/postgres",
-	            "jfdoyle3", "DuM8041");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "jfdoyle3",
+					"DuM8041");
 
 			String sql = "INSERT INTO stocktable (date_scraped, symbol, last_price,price_change,change_percentage,market_time,volume,avgvol,market_cap) values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(sql);

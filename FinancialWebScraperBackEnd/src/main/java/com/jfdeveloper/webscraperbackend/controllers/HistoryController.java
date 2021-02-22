@@ -38,9 +38,4 @@ public class HistoryController {
 		return historyService.findBySymbol(symbol);
 	}
 
-	@GetMapping("/date/{date}")
-	public List<HistoryEntity> findByDate(@PathVariable Date date) {
-		return historyService.findByDate(date);
-	}
-
 }

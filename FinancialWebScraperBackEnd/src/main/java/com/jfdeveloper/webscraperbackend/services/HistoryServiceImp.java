@@ -37,11 +37,6 @@ public class HistoryServiceImp implements HistoryService {
 		return stockDao.findBySymbol(symbol);
 	}
 
-	@Transactional
-	@Override
-	public List<HistoryEntity> findByDate(Date date) {
-		return stockDao.findByDate(date);
-	}
 	
 
 }

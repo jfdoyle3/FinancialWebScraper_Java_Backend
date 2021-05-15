@@ -47,7 +47,7 @@ public class Login {
 			waitPassword.until(ExpectedConditions.elementToBeClickable(By.id("login-passwd")));
 
 			WebElement passwordField = driver.findElement(By.id("login-passwd"));
-			passwordField.sendKeys("");
+			passwordField.sendKeys("we8Yb4VJ87sq4C");
 			passwordField.sendKeys(Keys.ENTER);
 
 			WebDriverWait waitPort = new WebDriverWait(driver, 20);
@@ -61,10 +61,10 @@ public class Login {
 			ArrayList<String> stockList = data.scrape(driver.getPageSource());
 			StockList stockTable = new StockList();
 			ArrayList<Stock> stocks = stockTable.createStockList(stockList);
-//			System.out.printf("Scraping table completed.\n%d items scraped.", stocks.size());
-//			for (Stock stock : stocks) {
-//				System.out.println(stock);
-//		}
+			System.out.printf("Scraping table completed.\n%d items scraped.", stocks.size());
+			for (Stock stock : stocks) {
+				System.out.println(stock);
+		}
 //			return stocks;
 			DataBaseWriter db = new DataBaseWriter();
 			db.writeToDatabase(stocks);

@@ -45,7 +45,7 @@ public class Login {
 			waitPassword.until(ExpectedConditions.elementToBeClickable(By.id("login-passwd")));
 
 			WebElement passwordField = driver.findElement(By.id("login-passwd"));
-			passwordField.sendKeys("");
+			passwordField.sendKeys("we8Yb4VJ87sq4C");
 			passwordField.sendKeys(Keys.ENTER);
 
 			WebDriverWait waitPort = new WebDriverWait(driver, 20);

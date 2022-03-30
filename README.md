@@ -1,2 +1,2 @@
 # FinancialWebScraper_Java_Backend
-Backend f Financial Web Scraper
+Backend Financial Web Scraper
